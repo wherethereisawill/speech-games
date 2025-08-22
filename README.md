@@ -21,5 +21,6 @@ Install backend deps and run
 - `uvicorn main:app --reload --host 0.0.0.0 --port 8000`
 
 Install frontend deps & run
+- `cd frontend`
 - `npm install`
 - `npm run dev`
