@@ -1,4 +1,5 @@
 Clone existing repo
+- `cd` to folder you want to clone to
 - `git clone https://github.com/wherethereisawill/shipfast.git new-project-name`
 - `cd new-project-name`
 
