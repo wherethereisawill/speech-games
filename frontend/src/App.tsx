@@ -1,13 +1,16 @@
-import './App.css'
-import { Button } from '@/components/ui/button'
+import { Routes, Route } from 'react-router'
+import LandingPage from '@/pages/LandingPage'
+import BrowseGames from '@/pages/BrowseGames'
+import SoundStories from '@/games/SoundStories'
 
 function App() {
 
   return (
-    <>
-      <h1 className='text-3xl font-bold'>Hello World</h1>
-      <Button>Click me</Button>
-    </>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/browse" element={<BrowseGames />} />
+      <Route path="/games/sound-stories" element={<SoundStories />} />
+    </Routes>
   )
 }
 
