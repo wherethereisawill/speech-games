@@ -1,7 +1,7 @@
 # uv run -m utils.soundStory
 
-from utils.generateSoundStory import generate_sound_story
-from utils.generateImage import generate_image, save_image
+from utils.soundStory.genText import generate_sound_story
+from utils.soundStory.genImage import generate_image, save_image
 
 def generate_sound_story_with_image():
     story_prompt = "You are a famous children's author known for their creative, funny and engaging stories. Write a 25-word auditory bombardment story with a space theme for a 6-year-old featuring the /s/ sound. The story should include maximum 5 words with the /s/ sound."
