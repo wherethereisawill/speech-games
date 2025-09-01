@@ -1,6 +1,6 @@
-# uv run -m utils.generateImage
+# uv run -m utils.soundStory.genImage
 from lib.gemini import google_client
-import os
+from utils.saveFile import save_image
 
 def generate_image(prompt: str) -> bytes:
 
@@ -14,16 +14,10 @@ def generate_image(prompt: str) -> bytes:
             print(part.text)
         elif part.inline_data is not None:
             return part.inline_data.data
-        
-def save_image(image: bytes, image_name: str):
-    file_dir = "/Users/willnorris/Documents/Projects/speech-games/backend/files"
-    os.makedirs(file_dir, exist_ok=True)
-    save_path = os.path.join(file_dir, image_name)
-    with open(save_path, "wb") as f:
-        f.write(image)
-    print(f"Saved image to {save_path}")
 
 if __name__ == "__main__":
     prompt = "Create a photorealistic picture of a lion stood on a mountain wearing a crown."
-    image = generate_image(prompt)
-    save_image(image, "generated_image_3.png")
+    image_bytes = generate_image(prompt)
+    image_name = "test.png"
+    file_dir = "/Users/willnorris/Documents/Projects/speech-games/backend/utils/soundStory/images"
+    save_image(image_bytes, image_name, file_dir)
