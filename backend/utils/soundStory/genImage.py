@@ -1,8 +1,8 @@
 # uv run -m utils.soundStory.genImage
 from lib.gemini import google_client
-from utils.saveFile import save_image
+from utils.saveImage import save_image
 
-def generate_image(prompt: str) -> bytes:
+def gen_image(prompt: str) -> bytes:
 
     response = google_client.models.generate_content(
         model="gemini-2.5-flash-image-preview",
@@ -17,7 +17,7 @@ def generate_image(prompt: str) -> bytes:
 
 if __name__ == "__main__":
     prompt = "Create a photorealistic picture of a lion stood on a mountain wearing a crown."
-    image_bytes = generate_image(prompt)
+    image_bytes = gen_image(prompt)
     image_name = "test.png"
     file_dir = "/Users/willnorris/Documents/Projects/speech-games/backend/utils/soundStory/images"
     save_image(image_bytes, image_name, file_dir)
